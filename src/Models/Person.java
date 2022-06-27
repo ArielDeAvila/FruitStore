@@ -3,12 +3,20 @@ package Models;
 import java.util.Date;
 
 public class Person {
-    public String name;
-    public String lastName1;
-    public String LastName2;
-    public Date dateBirth;
+    protected String name;
+    protected String lastName1;
+    protected String lastName2;
+    protected Date dateBirth;
 
-    public void setName(String name) {
+    public Person(String name,String lastName1,String lastName2,Date dateBirth){
+        this.name=name;
+        this.lastName1=lastName1;
+        this.lastName2=lastName2;
+        this.dateBirth = dateBirth;
+
+    }
+
+    public void modifyName(String name) {
         this.name = name;
     }
 
