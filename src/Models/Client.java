@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -10,6 +11,7 @@ import java.util.Date;
 public class Client extends Person{
     //Campos
     private BankAccount clientBankAccount= new BankAccount();
+    private ArrayList<Order> orders;
 
     /**
      * Contructor en la que define las propiedades de una persona pasandolas
@@ -47,5 +49,20 @@ public class Client extends Person{
         this.clientBankAccount.setActivated(activation);
     }
 
+    /**
+     * Metodo que agrega un nuevo pedido al cliente
+     * @param order Pedido a agregar
+     */
+    public void addOrder(Order order){
+        this.orders.add(order);
+    }
+
+    /**
+     * Metodo que regresa una lista con los pedidos del cliente
+     * @return Lista de pedidos
+     */
+    public ArrayList<Order> orders(){
+        return this.orders;
+    }
 
 }
